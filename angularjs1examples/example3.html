@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<html>
+<body ng-app="myApp">
+
+    <sampledirective></sampledirective>
+
+    <div sampledirective></div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("sampledirective", function () {
+            return {
+                restrict: "A",
+                template: "<h1>Made by a directive!</h1>"
+            };
+        });
+    </script>
+
+    <p><strong>Note:</strong> By setting the <strong>restrict</strong> property to "A", only the HTML element with the "sampledirective" attribute has invoked the directive.</p>
+</body>
+</html>

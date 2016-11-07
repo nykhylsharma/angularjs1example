@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.min.css">
+    <script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <table ng-table="vm.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="user in $data">
+            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+                {{user.name}}
+            </td>
+            <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+                {{user.age}}
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var self = this;
+        var data = [{ name: "Moroni", age: 50 } /*,*/];
+        self.tableParams = new NgTableParams({}, { dataset: data });
+        angular.module("myApp", ["ngTable"]);
+    </script>
+</body>
+</html>

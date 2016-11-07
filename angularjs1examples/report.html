@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="myCtrl">
+            <img src="http://{{url}}" />
+            <img ng-src="http://{{url}}" />
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller('myCtrl',
+            function ($scope) {
+                //$scope.url = 'cdn1.www.st-hatena.com/users/ho/howdy39/profile.gif';
+                $scope.url = 'C://Users//Vinay//Downloads//IMG_5770.jpg';
+            }
+        );
+    </script>
+</body>
+</html>
